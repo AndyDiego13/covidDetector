@@ -7,7 +7,7 @@ import pandas as pd
 try:
   #tengo que poner mi contraseña y host es la noexion de nuestr compu
   #aqui se guarda la conexion con tu base de datos de sql
-    cnx = mysql.connector.connect(user='root', password='Iyzkw3927', host='127.0.0.1', database='covidDetector', auth_plugin='mysql_native_password')
+    cnx = mysql.connector.connect(user='root', password='samudeluque', host='127.0.0.1', database='covidDetector', auth_plugin='mysql_native_password')
     cursor = cnx.cursor()
 
     #estas indicando la condicion para crear una tupla c
@@ -43,7 +43,7 @@ try:
         oxigeno = random.randint(95,100)
         ritmo = random.randint(60,100)
 
-        fecha = datetime.datetime(2020,11,11) + datetime.timedelta(days = random.randint(1,30)) 
+        fecha = datetime.datetime(2020,11,11) + datetime.timedelta(days = random.randint(1,30))
         hora = datetime.time()
         query_Oxigeno = (x, oxigeno, fecha, hora)
         queryDataOXi = (f"insert into controlOximetro  values( %s, %s, %s, %s) ;")
