@@ -39,7 +39,9 @@ data_series_smooth_ex = smooth_curve_exponential(data_series, 0.95)
 data_series_smooth_av = smooth_curve_average(data_series, 20)
 
 #plt.plot(data_series)
+#naranja exponencial
 plt.plot(data_series_smooth_ex)
+#azul avarage
 plt.plot(data_series_smooth_av)
 plt.plot()
 plt.ylabel("Data")
