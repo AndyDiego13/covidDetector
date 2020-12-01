@@ -1,11 +1,13 @@
 import serial
+import numpy as np
 
 ser = serial.Serial("/dev/cu.usbmodem14101",9600)
+#while 1 = true, mientras se reciban los datos
 while(1):
-    lineBytes=ser.readline()
-    line=lineBytes.decode("ascii")
-    if line[0:2]!="HR":
-        continue
+    lineBytes = ser.readline()
+    line = lineBytes.decode("ascii")
+    #if line[0:2]!="HR":
+        #continue
     #quitas enter
     line=line.rstrip()
     #separas los datos de HR y milisegundos
@@ -15,4 +17,4 @@ while(1):
     hr=int(medidas[0].split(":")[1])
     #aquí esta Milisegundos
     milis=int(medidas[1].split(":")[1])
-    print(hr)
+    print(hr, "milis", milis)
